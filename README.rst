@@ -1,1 +1,0 @@
-An example to create a python repository that can be installed by PIP.
