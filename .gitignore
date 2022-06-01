@@ -5,5 +5,7 @@
 /tutorialsTest
 /Sources
 /__pycache__
+/build
+/pyLCM.egg-info
 
 *.exe
