@@ -1,0 +1,9 @@
+# git-ls-files --others --exclude-from=.git/info/exclude
+# Lines that start with '#' are comments.
+
+# Ignore the test directory
+/tutorialsTest
+/Sources
+/__pycache__
+
+*.exe
