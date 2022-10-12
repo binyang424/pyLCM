@@ -8,7 +8,7 @@ setup(
     author='Bin Yang',
     author_email='bin.yang@polymtl.ca',
     license='BSD 2-clause',
-    packages=['pyLCM'],
+    packages=['pyLCM', 'pyLCM.perm', 'pyLCM.resin', 'pyLCM.utility'],
     install_requires=['numpy>=0.5',             
                       ],
 

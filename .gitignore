@@ -2,10 +2,10 @@
 # Lines that start with '#' are comments.
 
 # Ignore the test directory
-/tutorialsTest
-/Sources
-/__pycache__
-/build
-/pyLCM.egg-info
+
+/Sources/
+/pyLCM/__pycache__/
+/build/
+/pyLCM.egg-info/
 
 *.exe
