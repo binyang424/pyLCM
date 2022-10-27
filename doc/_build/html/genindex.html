@@ -67,27 +67,23 @@
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
- <a href="#D"><strong>D</strong></a>
- | <a href="#F"><strong>F</strong></a>
+ <a href="#F"><strong>F</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
  | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
  
 </div>
-<h2 id="D">D</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="source/pyLCM.perm.html#pyLCM.perm.Darcy1D.distance">distance() (in module pyLCM.perm.Darcy1D)</a>
-</li>
-  </ul></td>
-</tr></table>
-
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="source/pyLCM.perm.html#pyLCM.perm.Darcy1D.fillingTime">fillingTime() (in module pyLCM.perm.Darcy1D)</a>
+      <li><a href="source/pyLCM.perm.html#pyLCM.perm.perm_1d.filling_time">filling_time() (in module pyLCM.perm.perm_1d)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="source/pyLCM.perm.html#pyLCM.perm.perm_1d.flow_dist">flow_dist() (in module pyLCM.perm.perm_1d)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -103,9 +99,9 @@
 </li>
         <li><a href="source/pyLCM.perm.html#module-pyLCM.perm">pyLCM.perm</a>
 </li>
-        <li><a href="source/pyLCM.perm.html#module-pyLCM.perm.Darcy1D">pyLCM.perm.Darcy1D</a>
-</li>
         <li><a href="source/pyLCM.perm.html#module-pyLCM.perm.kz">pyLCM.perm.kz</a>
+</li>
+        <li><a href="source/pyLCM.perm.html#module-pyLCM.perm.perm_1d">pyLCM.perm.perm_1d</a>
 </li>
         <li><a href="source/pyLCM.resin.html#module-pyLCM.resin">pyLCM.resin</a>
 </li>
@@ -122,9 +118,13 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="source/pyLCM.perm.html#pyLCM.perm.Darcy1D.perm1d">perm1d() (in module pyLCM.perm.Darcy1D)</a>
+      <li><a href="source/pyLCM.perm.html#pyLCM.perm.perm_1d.perm_scale">perm_scale() (in module pyLCM.perm.perm_1d)</a>
+</li>
+      <li><a href="source/pyLCM.perm.html#pyLCM.perm.perm_1d.piston_flow_rate">piston_flow_rate() (in module pyLCM.perm.perm_1d)</a>
 </li>
       <li><a href="source/pyLCM.utility.html#pyLCM.utility.fiber_volume_fraction.preform_vf">preform_vf() (in module pyLCM.utility.fiber_volume_fraction)</a>
+</li>
+      <li><a href="source/pyLCM.perm.html#pyLCM.perm.perm_1d.pressure_drop">pressure_drop() (in module pyLCM.perm.perm_1d)</a>
 </li>
       <li>
     pyLCM
@@ -141,13 +141,6 @@
 </li>
       </ul></li>
       <li>
-    pyLCM.perm.Darcy1D
-
-      <ul>
-        <li><a href="source/pyLCM.perm.html#module-pyLCM.perm.Darcy1D">module</a>
-</li>
-      </ul></li>
-      <li>
     pyLCM.perm.kz
 
       <ul>
@@ -156,6 +149,13 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    pyLCM.perm.perm_1d
+
+      <ul>
+        <li><a href="source/pyLCM.perm.html#module-pyLCM.perm.perm_1d">module</a>
+</li>
+      </ul></li>
       <li>
     pyLCM.resin
 
@@ -193,14 +193,14 @@
       <li><a href="source/pyLCM.utility.html#pyLCM.utility.Reynolds.reynolds_number">reynolds_number() (in module pyLCM.utility.Reynolds)</a>
 </li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="source/pyLCM.utility.html#pyLCM.utility.ReynoldsNumber">ReynoldsNumber() (in module pyLCM.utility)</a>
-</li>
-  </ul></td>
 </tr></table>
 
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="source/pyLCM.perm.html#pyLCM.perm.perm_1d.saturated">saturated() (in module pyLCM.perm.perm_1d)</a>
+</li>
+  </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="source/pyLCM.utility.html#pyLCM.utility.fiber_volume_fraction.solid_vf">solid_vf() (in module pyLCM.utility.fiber_volume_fraction)</a>
 </li>
@@ -210,7 +210,19 @@
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="source/pyLCM.utility.html#pyLCM.utility.fiber_volume_fraction.tex_to_area">tex_to_area() (in module pyLCM.utility.fiber_volume_fraction)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="source/pyLCM.utility.html#pyLCM.utility.fiber_volume_fraction.tow_vf">tow_vf() (in module pyLCM.utility.fiber_volume_fraction)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="source/pyLCM.perm.html#pyLCM.perm.perm_1d.unsaturated">unsaturated() (in module pyLCM.perm.perm_1d)</a>
 </li>
   </ul></td>
 </tr></table>

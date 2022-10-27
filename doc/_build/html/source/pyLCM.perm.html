@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>pyLCM.perm package &mdash; pyLCM: a python package for Liquid Composite Molding 0.0.1 documentation</title>
@@ -43,14 +43,17 @@
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">pyLCM.perm package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-pyLCM.perm.Darcy1D">pyLCM.perm.Darcy1D module</a><ul>
-<li><a class="reference internal" href="#pyLCM.perm.Darcy1D.distance"><code class="docutils literal notranslate"><span class="pre">distance()</span></code></a></li>
-<li><a class="reference internal" href="#pyLCM.perm.Darcy1D.fillingTime"><code class="docutils literal notranslate"><span class="pre">fillingTime()</span></code></a></li>
-<li><a class="reference internal" href="#pyLCM.perm.Darcy1D.perm1d"><code class="docutils literal notranslate"><span class="pre">perm1d()</span></code></a></li>
+<li><a class="reference internal" href="#module-pyLCM.perm.kz">pyLCM.perm.kz module</a></li>
+<li><a class="reference internal" href="#module-pyLCM.perm.perm_1d">pyLCM.perm.perm_1d module</a><ul>
+<li><a class="reference internal" href="#pyLCM.perm.perm_1d.filling_time"><code class="docutils literal notranslate"><span class="pre">filling_time()</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.perm.perm_1d.flow_dist"><code class="docutils literal notranslate"><span class="pre">flow_dist()</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.perm.perm_1d.perm_scale"><code class="docutils literal notranslate"><span class="pre">perm_scale()</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.perm.perm_1d.piston_flow_rate"><code class="docutils literal notranslate"><span class="pre">piston_flow_rate()</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.perm.perm_1d.pressure_drop"><code class="docutils literal notranslate"><span class="pre">pressure_drop()</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.perm.perm_1d.saturated"><code class="docutils literal notranslate"><span class="pre">saturated()</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.perm.perm_1d.unsaturated"><code class="docutils literal notranslate"><span class="pre">unsaturated()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#pylcm-perm-in-plane-permeability-module">pyLCM.perm.In-plane permeability module</a></li>
-<li><a class="reference internal" href="#module-pyLCM.perm.kz">pyLCM.perm.kz module</a></li>
 <li><a class="reference internal" href="#module-pyLCM.perm">Module contents</a></li>
 </ul>
 </li>
@@ -85,53 +88,225 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
 </section>
-<section id="module-pyLCM.perm.Darcy1D">
-<span id="pylcm-perm-darcy1d-module"></span><h2>pyLCM.perm.Darcy1D module<a class="headerlink" href="#module-pyLCM.perm.Darcy1D" title="Permalink to this heading"></a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="pyLCM.perm.Darcy1D.distance">
-<span class="sig-prename descclassname"><span class="pre">pyLCM.perm.Darcy1D.</span></span><span class="sig-name descname"><span class="pre">distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">permeability</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">porosity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">viscosity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/perm/Darcy1D.html#distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.perm.Darcy1D.distance" title="Permalink to this definition"></a></dt>
-<dd><p>Calculate the one dimensional flow distance in porous media:
-distance = sqrt( (2* pressure * permeability * time) / (viscosity * porosity) )
-:param permeability:
-:param pressure:
-:param porosity:
-:param viscosity:
-:return: one dimensional flow distance</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pyLCM.perm.Darcy1D.fillingTime">
-<span class="sig-prename descclassname"><span class="pre">pyLCM.perm.Darcy1D.</span></span><span class="sig-name descname"><span class="pre">fillingTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">permeability</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">porosity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">viscosity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/perm/Darcy1D.html#fillingTime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.perm.Darcy1D.fillingTime" title="Permalink to this definition"></a></dt>
-<dd><p>Calculate the filling time of porous media:
-fillingTime = (viscosity * porosity * distance^2) / (2 * pressure * permeability)
-:param permeability:
-:param pressure:
-:param porosity:
-:param viscosity:
-:param distance:
-:return: filling time</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pyLCM.perm.Darcy1D.perm1d">
-<span class="sig-prename descclassname"><span class="pre">pyLCM.perm.Darcy1D.</span></span><span class="sig-name descname"><span class="pre">perm1d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">massFlowRate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">area</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thickness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">liquidDensity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">viscosity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algorithm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Darcy'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/perm/Darcy1D.html#perm1d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.perm.Darcy1D.perm1d" title="Permalink to this definition"></a></dt>
-<dd><p>Calculate the one dimensional permeability of porous media according to the Darcy’s law and experimental measured mass flow rate:
-permeability = (VolumeFlowRate * viscosity * thickness) / (pressure * area * liquidDensity)
-:param algorithm:
-:param massFlowRate: kg/s
-:param area: m^2
-:param pressure: Pa
-:param thickness: m
-:param liquidDensity: kg/m^3
-:return: one dimensional permeability: m^2</p>
-</dd></dl>
-
-</section>
-<section id="pylcm-perm-in-plane-permeability-module">
-<h2>pyLCM.perm.In-plane permeability module<a class="headerlink" href="#pylcm-perm-in-plane-permeability-module" title="Permalink to this heading"></a></h2>
-</section>
 <section id="module-pyLCM.perm.kz">
 <span id="pylcm-perm-kz-module"></span><h2>pyLCM.perm.kz module<a class="headerlink" href="#module-pyLCM.perm.kz" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-pyLCM.perm.perm_1d">
+<span id="pylcm-perm-perm-1d-module"></span><h2>pyLCM.perm.perm_1d module<a class="headerlink" href="#module-pyLCM.perm.perm_1d" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyLCM.perm.perm_1d.filling_time">
+<span class="sig-prename descclassname"><span class="pre">pyLCM.perm.perm_1d.</span></span><span class="sig-name descname"><span class="pre">filling_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">permeability</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">porosity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">viscosity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/perm/perm_1d.html#filling_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.perm.perm_1d.filling_time" title="Permalink to this definition"></a></dt>
+<dd><p>TODO: Check the formulation
+Calculate the filling time of porous media:
+fillingTime = (viscosity * porosity * distance^2) / (2 * pressure * permeability)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>permeability: float</strong></dt><dd><p>Permeability of porous media.</p>
+</dd>
+<dt><strong>pressure:</strong></dt><dd><p>Pressure of the fluid.</p>
+</dd>
+<dt><strong>porosity:</strong></dt><dd></dd>
+<dt><strong>viscosity:</strong></dt><dd></dd>
+<dt><strong>:param distance:</strong></dt><dd></dd>
+<dt><strong>:return: filling time</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyLCM.perm.perm_1d.flow_dist">
+<span class="sig-prename descclassname"><span class="pre">pyLCM.perm.perm_1d.</span></span><span class="sig-name descname"><span class="pre">flow_dist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">permeability</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">porosity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">viscosity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/perm/perm_1d.html#flow_dist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.perm.perm_1d.flow_dist" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the one dimensional flow distance in porous media:
+distance = sqrt( (2* pressure * permeability * time) / (viscosity * porosity) )</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>permeability: float</strong></dt><dd><p>Permeability of porous media.</p>
+</dd>
+<dt><strong>pressure: float</strong></dt><dd><p>Injection pressure of the fluid.</p>
+</dd>
+<dt><strong>porosity: float</strong></dt><dd><p>Porosity of porous media.</p>
+</dd>
+<dt><strong>viscosity: float</strong></dt><dd><p>Viscosity of the fluid.</p>
+</dd>
+<dt><strong>time: float or list</strong></dt><dd><p>Filling time of porous media.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>one dimensional flow distance</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyLCM.perm.perm_1d.perm_scale">
+<span class="sig-prename descclassname"><span class="pre">pyLCM.perm.perm_1d.</span></span><span class="sig-name descname"><span class="pre">perm_scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f_s</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/perm/perm_1d.html#perm_scale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.perm.perm_1d.perm_scale" title="Permalink to this definition"></a></dt>
+<dd><p>Permeability estimation of scaled porous media.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>k</strong><span class="classifier">float</span></dt><dd><p>Permeability of the unscaled porous media.</p>
+</dd>
+<dt><strong>f_s</strong><span class="classifier">float</span></dt><dd><p>Scaling factor of the porous media.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>k_s</strong><span class="classifier">float</span></dt><dd><p>Permeability of the scaled porous media.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Belot, Igor, et al. “A 3D additive manufacturing approach for the
+validation of a numerical wall-scale model of catalytic particulate
+filters.” Chemical Engineering Journal 405 (2021): 126653.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyLCM.perm.perm_1d.piston_flow_rate">
+<span class="sig-prename descclassname"><span class="pre">pyLCM.perm.perm_1d.</span></span><span class="sig-name descname"><span class="pre">piston_flow_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cross_section_area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0048454</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">liquid_density</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">960</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mass'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/perm/perm_1d.html#piston_flow_rate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.perm.perm_1d.piston_flow_rate" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the flow rate of piston pumps according to its area
+and pumping action velocity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>velocity</strong><span class="classifier">float</span></dt><dd><p>Pumping action velocity of the piston pump in m/s.</p>
+</dd>
+<dt><strong>cross_section_area</strong><span class="classifier">float</span></dt><dd><p>Cross-section area of the piston pump (m^2).</p>
+</dd>
+<dt><strong>liquid_density</strong><span class="classifier">float</span></dt><dd><p>Density of the liquid in kg/m^3.</p>
+</dd>
+<dt><strong>alg</strong><span class="classifier">str</span></dt><dd><p>Algorithm to calculate the flow rate. Default is “mass”.
+The other option is “volume”.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>flow_rate</strong><span class="classifier">float</span></dt><dd><p>Flow rate of the piston pump.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyLCM.perm.perm_1d.pressure_drop">
+<span class="sig-prename descclassname"><span class="pre">pyLCM.perm.perm_1d.</span></span><span class="sig-name descname"><span class="pre">pressure_drop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">area</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/perm/perm_1d.html#pressure_drop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.perm.perm_1d.pressure_drop" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the pressure drop of a flow thorugh a porous media
+with a given flow rate, cross-section area and viscosity based
+on Darcy’s law.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>q: float</strong></dt><dd><p>Flow rate in m^3/s</p>
+</dd>
+<dt><strong>area: float</strong></dt><dd><p>Cross-section area perpendicular to the flow in m^2.</p>
+</dd>
+<dt><strong>mu: float</strong></dt><dd><p>Viscosity of the fluid in Pa*s.</p>
+</dd>
+<dt><strong>k: float</strong></dt><dd><p>Permeability of the porous media in m^2.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>dp: float</dt><dd><p>Pressure drop across the porous media in Pa.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyLCM.perm.perm_1d.saturated">
+<span class="sig-prename descclassname"><span class="pre">pyLCM.perm.perm_1d.</span></span><span class="sig-name descname"><span class="pre">saturated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mass_flow_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">area</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flow_dist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">liquid_density</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/perm/perm_1d.html#saturated"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.perm.perm_1d.saturated" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the saturated one dimensional permeability of porous media according to
+the Darcy’s law and experimental measured mass flow rate:</p>
+<p>permeability = (VolumeFlowRate * viscosity * thickness) / (pressure * area * liquidDensity)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>mass_flow_rate: float</strong></dt><dd><p>Mass flow rate of the fluid in kg/s.</p>
+</dd>
+<dt><strong>area: float</strong></dt><dd><p>Cross-section area perpendicular to the flow in m^2.</p>
+</dd>
+<dt><strong>pressure: float</strong></dt><dd><p>Pressure drop across the porous media in the flow direction in Pa.</p>
+</dd>
+<dt><strong>flow_dist: float</strong></dt><dd><p>Flow distance (sample length along the flow direction) in m.</p>
+</dd>
+<dt><strong>liquid_density: float</strong></dt><dd><p>Density of the fluid in kg/m^3.</p>
+</dd>
+<dt><strong>mu: float</strong></dt><dd><p>Viscosity of the fluid in Pa*s.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>one dimensional permeability: m^2</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyLCM.perm.perm_1d.unsaturated">
+<span class="sig-prename descclassname"><span class="pre">pyLCM.perm.perm_1d.</span></span><span class="sig-name descname"><span class="pre">unsaturated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flow_front</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Vf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/perm/perm_1d.html#unsaturated"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.perm.perm_1d.unsaturated" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the unsaturated permeability of a porous medium by recording the flow
+front position and the corresponding filling time. The injection is performed
+at a constant pressure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>flow_front</strong><span class="classifier">list</span></dt><dd><p>Flow front position in meter.</p>
+</dd>
+<dt><strong>time</strong><span class="classifier">list</span></dt><dd><p>The time that the flow front position is recorded at the corresponding
+flow front position. The unit is second.</p>
+</dd>
+<dt><strong>Vf</strong><span class="classifier">float</span></dt><dd><p>The fiber volume fraction of the porous media.</p>
+</dd>
+<dt><strong>pressure</strong><span class="classifier">float</span></dt><dd><p>The pressure difference between the inlet and outlet of the porous media.
+The unit is Pascal.</p>
+</dd>
+<dt><strong>mu</strong><span class="classifier">float</span></dt><dd><p>The viscosity of the fluid. The unit is Pascal second (Pa·s).</p>
+</dd>
+<dt><strong>skip</strong><span class="classifier">int, optional</span></dt><dd><p>The number of data points to skip at the beginning of the data to cover
+the fully developed 1d flow only. The default is 0.</p>
+</dd>
+<dt><strong>plot</strong><span class="classifier">bool, optional</span></dt><dd><p>Whether to plot the filling VS square of flow distance. The default is
+False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>perm</strong><span class="classifier">float</span></dt><dd><p>The permeability of the porous media. The unit is m^2.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyLCM</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span>             <span class="mi">82</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">109</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">142</span><span class="p">,</span> <span class="mi">161</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">198</span><span class="p">,</span>             <span class="mi">218</span><span class="p">,</span> <span class="mi">242</span><span class="p">,</span> <span class="mi">262</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flow_front</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span>                   <span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.14</span><span class="p">,</span> <span class="mf">0.16</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.22</span><span class="p">,</span>                   <span class="mf">0.24</span><span class="p">,</span> <span class="mf">0.26</span><span class="p">,</span> <span class="mf">0.28</span><span class="p">,</span> <span class="mf">0.30</span><span class="p">,</span> <span class="mf">0.32</span><span class="p">,</span> <span class="mf">0.34</span><span class="p">,</span>                   <span class="mf">0.36</span><span class="p">,</span> <span class="mf">0.38</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Vf</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pressure</span> <span class="o">=</span> <span class="mi">100000</span> <span class="c1"># Pa</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mu</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># Pa*s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">perm</span> <span class="o">=</span> <span class="n">pyLCM</span><span class="o">.</span><span class="n">perm</span><span class="o">.</span><span class="n">perm_1d</span><span class="p">(</span><span class="n">flow_front</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">Vf</span><span class="p">,</span> <span class="n">pressure</span><span class="p">,</span> <span class="n">mu</span><span class="p">)</span> <span class="c1"># m^2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">perm</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="go">1.59596e-10</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </section>
 <section id="module-pyLCM.perm">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyLCM.perm" title="Permalink to this heading"></a></h2>

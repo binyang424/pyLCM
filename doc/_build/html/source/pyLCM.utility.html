@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>pyLCM.utility package &mdash; pyLCM: a python package for Liquid Composite Molding 0.0.1 documentation</title>
@@ -50,13 +50,11 @@
 <li><a class="reference internal" href="#module-pyLCM.utility.fiber_volume_fraction">pyLCM.utility.fiber_volume_fraction module</a><ul>
 <li><a class="reference internal" href="#pyLCM.utility.fiber_volume_fraction.preform_vf"><code class="docutils literal notranslate"><span class="pre">preform_vf()</span></code></a></li>
 <li><a class="reference internal" href="#pyLCM.utility.fiber_volume_fraction.solid_vf"><code class="docutils literal notranslate"><span class="pre">solid_vf()</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.utility.fiber_volume_fraction.tex_to_area"><code class="docutils literal notranslate"><span class="pre">tex_to_area()</span></code></a></li>
 <li><a class="reference internal" href="#pyLCM.utility.fiber_volume_fraction.tow_vf"><code class="docutils literal notranslate"><span class="pre">tow_vf()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#module-pyLCM.utility">Module contents</a><ul>
-<li><a class="reference internal" href="#pyLCM.utility.ReynoldsNumber"><code class="docutils literal notranslate"><span class="pre">ReynoldsNumber()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#module-pyLCM.utility">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -97,9 +95,9 @@
 <span class="sig-prename descclassname"><span class="pre">pyLCM.utility.Reynolds.</span></span><span class="sig-name descname"><span class="pre">reynolds_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">viscosity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/utility/Reynolds.html#reynolds_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.utility.Reynolds.reynolds_number" title="Permalink to this definition"></a></dt>
 <dd><p>Calculate Reynolds number for a given velocity field.</p>
 <img alt="../_images/reynolds_number.svg" src="../_images/reynolds_number.svg" /><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>velocity: float or array_like</strong></dt><dd><p>velocity field</p>
+<dt><strong>velocity: float</strong></dt><dd><p>velocity field</p>
 </dd>
 <dt><strong>density: float</strong></dt><dd><p>density of fluid</p>
 </dd>
@@ -109,7 +107,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>Reynolds number</dt><dd></dd>
 </dl>
@@ -126,7 +124,7 @@
 <dd><p>Calculate the fiber volume fraction of a preform according to
 areal density, number of layers and thickness of the preform.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>areal_density</strong><span class="classifier">float or list of float</span></dt><dd><p>Areal density of the reinforcement textile.</p>
 </dd>
@@ -136,7 +134,7 @@ areal density, number of layers and thickness of the preform.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>vf</strong><span class="classifier">float</span></dt><dd><p>Fiber volume fraction of the preform.</p>
 </dd>
@@ -153,7 +151,7 @@ of a given volume (unit cell). The result can also be interpreted as the
 complementary of the volume fraction of meso-pores between the fiber tows.
 Namely, the solid volume fraction = 1 - volume fraction of meso-pores.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>volume_tows</strong><span class="classifier">float or list of float</span></dt><dd><p>Volume of the fiber tows which are regared as solid.</p>
 </dd>
@@ -161,9 +159,35 @@ Namely, the solid volume fraction = 1 - volume fraction of meso-pores.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>vf</strong><span class="classifier">float or list of float</span></dt><dd><p>Solid volume fraction of given volume.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyLCM.utility.fiber_volume_fraction.tex_to_area">
+<span class="sig-prename descclassname"><span class="pre">pyLCM.utility.fiber_volume_fraction.</span></span><span class="sig-name descname"><span class="pre">tex_to_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density_fiber</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2550</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/utility/fiber_volume_fraction.html#tex_to_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.utility.fiber_volume_fraction.tex_to_area" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the cross section area of fibers containing in a tow according
+to the tow linear density in tex and the fiber diameter. Where:</p>
+<blockquote>
+<div><p>1 tex = 1/1000 * kg/km</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tex</strong><span class="classifier">float</span></dt><dd><p>Tow linear density in tex.</p>
+</dd>
+<dt><strong>density_fiber</strong><span class="classifier">float</span></dt><dd><p>Density of the fiber in kg/m^3.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>area</strong><span class="classifier">float</span></dt><dd><p>Cross section area of fibers containing in a tow in mm^2.</p>
 </dd>
 </dl>
 </dd>
@@ -176,7 +200,7 @@ Namely, the solid volume fraction = 1 - volume fraction of meso-pores.</p>
 <dd><p>Calculate the fiber volume fraction of a fiber tow according to
 fiber numbers it containing and the fiber diameter.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>tow_cross_section_area</strong><span class="classifier">float or list of float</span></dt><dd><p>Cross section area of the fiber tow.</p>
 </dd>
@@ -189,7 +213,7 @@ range of 0 to 0.907 for hexagonal close packing. The default is False.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>vf</strong><span class="classifier">float or list of float</span></dt><dd><p>local fiber volume fractions of the fiber tow.</p>
 </dd>
@@ -201,11 +225,6 @@ range of 0 to 0.907 for hexagonal close packing. The default is False.</p>
 </section>
 <section id="module-pyLCM.utility">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyLCM.utility" title="Permalink to this heading"></a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="pyLCM.utility.ReynoldsNumber">
-<span class="sig-prename descclassname"><span class="pre">pyLCM.utility.</span></span><span class="sig-name descname"><span class="pre">ReynoldsNumber</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">viscosity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/utility.html#ReynoldsNumber"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.utility.ReynoldsNumber" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
 </section>
 </section>
 

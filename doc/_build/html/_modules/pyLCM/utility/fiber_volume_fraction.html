@@ -55,7 +55,6 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../index.html">Module code</a> &raquo;</li>
-          <li><a href="../utility.html">pyLCM.utility</a> &raquo;</li>
       <li>pyLCM.utility.fiber_volume_fraction</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -67,6 +66,27 @@
              
   <h1>Source code for pyLCM.utility.fiber_volume_fraction</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<div class="viewcode-block" id="tex_to_area"><a class="viewcode-back" href="../../../source/pyLCM.utility.html#pyLCM.utility.fiber_volume_fraction.tex_to_area">[docs]</a><span class="k">def</span> <span class="nf">tex_to_area</span><span class="p">(</span><span class="n">tex</span><span class="p">,</span> <span class="n">density_fiber</span><span class="o">=</span><span class="mi">2550</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the cross section area of fibers containing in a tow according</span>
+<span class="sd">    to the tow linear density in tex and the fiber diameter. Where:</span>
+<span class="sd">           1 tex = 1/1000 * kg/km</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    tex : float</span>
+<span class="sd">        Tow linear density in tex.</span>
+<span class="sd">    density_fiber : float</span>
+<span class="sd">        Density of the fiber in kg/m^3.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    area : float</span>
+<span class="sd">        Cross section area of fibers containing in a tow in mm^2.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">tex</span> <span class="o">*</span> <span class="mf">1e-3</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">density_fiber</span> <span class="o">*</span> <span class="mf">1e3</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e6</span></div>
 
 
 <div class="viewcode-block" id="tow_vf"><a class="viewcode-back" href="../../../source/pyLCM.utility.html#pyLCM.utility.fiber_volume_fraction.tow_vf">[docs]</a><span class="k">def</span> <span class="nf">tow_vf</span><span class="p">(</span><span class="n">tow_cross_section_area</span><span class="p">,</span> <span class="n">n_fibers</span><span class="p">,</span> <span class="n">d_fiber</span><span class="p">,</span> <span class="n">physical_checking</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>

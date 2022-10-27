@@ -9,7 +9,7 @@ def reynolds_number(velocity, density, viscosity, length):
 
     Parameters
     ----------
-    velocity: float or array_like
+    velocity: float
         velocity field
     density: float
         density of fluid
