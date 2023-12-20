@@ -4,6 +4,12 @@ make html
 
 make clean
 
+git:
+强制覆盖远程仓库
+git push -f --set-upstream pyLCM master:master
+
+
+
 参考pyimagej的文档组织形式
 
 https://github.com/imagej/pyimagej/blob/master/doc/index.rst

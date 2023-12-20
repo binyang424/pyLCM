@@ -9,3 +9,6 @@
 /pyLCM.egg-info/
 
 *.exe
+
+/future/
+/in_plane_gui/

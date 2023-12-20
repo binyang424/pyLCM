@@ -2,41 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61d17313-2aba-46ff-8053-32ba7eba2570" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pyLCM/perm/perm_1d.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/piston.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/doc/_build/doctrees/environment.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/doctrees/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/_build/doctrees/index.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/doctrees/source/modules.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/_build/doctrees/source/modules.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/doctrees/source/pyLCM.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/_build/doctrees/source/pyLCM.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/doctrees/source/pyLCM.perm.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/_build/doctrees/source/pyLCM.perm.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/doctrees/source/pyLCM.resin.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/_build/doctrees/source/pyLCM.resin.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/doctrees/source/pyLCM.utility.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/_build/doctrees/source/pyLCM.utility.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/html/_images/reynolds_number.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/html/_modules/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/html/_modules/pyLCM/perm/Darcy1D.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/html/_modules/pyLCM/utility.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/html/_modules/pyLCM/utility/Reynolds.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/html/_modules/pyLCM/utility/fiber_volume_fraction.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/html/_sources/source/pyLCM.perm.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/doc/_build/html/_sources/source/pyLCM.perm.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/html/_static/basic.css" beforeDir="false" afterPath="$PROJECT_DIR$/doc/_build/html/_static/basic.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/_build/html/genindex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/_build/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/doc/_build/html/objects.inv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/html/py-modindex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/doc/_build/html/searchindex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/html/source/modules.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/_build/html/source/modules.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/html/source/pyLCM.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/_build/html/source/pyLCM.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/html/source/pyLCM.perm.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/_build/html/source/pyLCM.perm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/html/source/pyLCM.resin.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/_build/html/source/pyLCM.resin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/_build/html/source/pyLCM.utility.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/_build/html/source/pyLCM.utility.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/source/pyLCM.perm.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/source/pyLCM.perm.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyLCM/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyLCM/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyLCM/perm/Darcy1D.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyLCM/perm/In-plane permeability.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyLCM/perm/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyLCM/perm/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyLCM/utility/Reynolds.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyLCM/utility/Reynolds.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyLCM/utility/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyLCM/utility/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmd.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,6 +180,7 @@
       <workItem from="1666114855822" duration="8968000" />
       <workItem from="1666810523174" duration="6050000" />
       <workItem from="1666830172767" duration="2167000" />
+      <workItem from="1666845135035" duration="206000" />
     </task>
     <servers />
   </component>

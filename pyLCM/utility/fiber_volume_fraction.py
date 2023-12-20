@@ -3,9 +3,16 @@ import numpy as np
 
 def tex_to_area(tex, density_fiber=2550):
     """
-    Calculate the cross section area of fibers containing in a tow according
-    to the tow linear density in tex and the fiber diameter. Where:
+    Calculate the cross-sectional area of fibers containing in a tow according
+    to the tow linear density in tex and the fiber diameter, where:
            1 tex = 1/1000 * kg/km
+
+    Note
+    ------
+    This function is used to calculate the cross-sectional area of fibers only
+    when the fiber diameter and number of fiber is not available. If the fiber
+    diameter is known, the cross-sectional area of fibers can be calculated
+    using thees information directly.
 
     Parameters
     ----------
@@ -17,7 +24,7 @@ def tex_to_area(tex, density_fiber=2550):
     Returns
     -------
     area : float
-        Cross section area of fibers containing in a tow in mm^2.
+        Cross-sectional area of fibers containing in a tow in mm^2.
     """
     return (tex * 1e-3) / (density_fiber * 1e3) * 1e6
 
@@ -30,7 +37,7 @@ def tow_vf(tow_cross_section_area, n_fibers, d_fiber, physical_checking=False):
     Parameters
     ----------
     tow_cross_section_area : float or list of float
-        Cross section area of the fiber tow.
+        Cross-sectional area of the fiber tow.
     n_fibers : int
         Number of fibers in the tow.
     d_fiber : float
@@ -75,27 +82,30 @@ def solid_vf(volume_tows, volume_total):
     return volume_tows / volume_total
 
 
-def preform_vf(areal_density, n_layers, thickness):
+def preform_vf(areal_density, n_layers, thickness, density_fiber=2550):
     """
     Calculate the fiber volume fraction of a preform according to
     areal density, number of layers and thickness of the preform.
 
+    preform_vf = area_density * n_layers / (density_fiber * thickness)
+
     Parameters
     ----------
     areal_density : float or list of float
-        Areal density of the reinforcement textile.
+        Areal density of the reinforcement textile. Unit: kg/m^2.
     n_layers : int
         Number of layers of reinforcement textile in the preform.
     thickness : float
-        Thickness of the preform.
+        Thickness of the preform. Unit: m.
+    density_fiber : float, optional
+        Density of the fiber in kg/m^3. The default is 2550.
 
     Returns
     -------
     vf : float
         Fiber volume fraction of the preform.
     """
-    # TODO
-    pass
+    return areal_density * n_layers / (density_fiber * thickness)
 
 
 if __name__ == "__main__":

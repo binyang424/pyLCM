@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def reynolds_number(velocity, density, viscosity, length):
+def reynolds_number(rho, u, L, mu):
     """
     Calculate Reynolds number for a given velocity field.
 
@@ -9,17 +9,19 @@ def reynolds_number(velocity, density, viscosity, length):
 
     Parameters
     ----------
-    velocity: float
-        velocity field
-    density: float
-        density of fluid
-    viscosity: float
-        dynamic viscosity of fluid
-    length: float
-        characteristic length
+    rho : float
+        Density of fluid
+    u : float or array of float/vector
+        Velocity vector (field) of fluid
+    L : float
+        Characteristic length
+    mu : float
+        Dynamic viscosity of fluid
 
     Returns
     -------
-    Reynolds number
+    Re : float
+        Reynolds number
     """
-    return density * np.linalg.norm(velocity) * length / viscosity
+
+    return rho * np.linalg.norm(u) * L / mu
