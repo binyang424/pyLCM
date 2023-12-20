@@ -2,13 +2,13 @@ from setuptools import setup
 
 setup(
     name='pyLCM',
-    version='0.0.1',    
+    version='0.0.2',
     description='Flow calculation in reinforcement textiles.',
     url='https://github.com/binyang424/pyLCM',
     author='Bin Yang',
     author_email='bin.yang@polymtl.ca',
     license='BSD 2-clause',
-    packages=['pyLCM', 'pyLCM.perm', 'pyLCM.resin', 'pyLCM.utility'],
+    packages=['pyLCM', 'pyLCM.perm', 'pyLCM.resin'],
     install_requires=['numpy>=0.5',             
                       ],
 

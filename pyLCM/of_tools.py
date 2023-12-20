@@ -1,3 +1,6 @@
+"""
+A collection of tools to work with OpenFOAM data.
+"""
 import numpy as np
 
 
