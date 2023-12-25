@@ -19,6 +19,7 @@
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/js\rtd_sphinx_search.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" /> 
@@ -43,6 +44,41 @@
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">pyLCM package</a><ul>
 <li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-pyLCM.fiber_fraction">pyLCM.fiber_fraction module</a><ul>
+<li><a class="reference internal" href="#pyLCM.fiber_fraction.solid_vf"><code class="docutils literal notranslate"><span class="pre">solid_vf()</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.fiber_fraction.tex_to_area"><code class="docutils literal notranslate"><span class="pre">tex_to_area()</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.fiber_fraction.tow_vf"><code class="docutils literal notranslate"><span class="pre">tow_vf()</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.fiber_fraction.vf_preform"><code class="docutils literal notranslate"><span class="pre">vf_preform()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pyLCM.of_tools">pyLCM.of_tools module</a><ul>
+<li><a class="reference internal" href="#pyLCM.of_tools.read_flow_rate"><code class="docutils literal notranslate"><span class="pre">read_flow_rate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pyLCM.pam_tools">pyLCM.pam_tools module</a></li>
+<li><a class="reference internal" href="#module-pyLCM.utility">pyLCM.utility module</a><ul>
+<li><a class="reference internal" href="#pyLCM.utility.bcolors"><code class="docutils literal notranslate"><span class="pre">bcolors</span></code></a><ul>
+<li><a class="reference internal" href="#pyLCM.utility.bcolors.BOLD"><code class="docutils literal notranslate"><span class="pre">bcolors.BOLD</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.utility.bcolors.ENDC"><code class="docutils literal notranslate"><span class="pre">bcolors.ENDC</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.utility.bcolors.FAIL"><code class="docutils literal notranslate"><span class="pre">bcolors.FAIL</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.utility.bcolors.HEADER"><code class="docutils literal notranslate"><span class="pre">bcolors.HEADER</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.utility.bcolors.OKBLUE"><code class="docutils literal notranslate"><span class="pre">bcolors.OKBLUE</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.utility.bcolors.OKCYAN"><code class="docutils literal notranslate"><span class="pre">bcolors.OKCYAN</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.utility.bcolors.OKGREEN"><code class="docutils literal notranslate"><span class="pre">bcolors.OKGREEN</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.utility.bcolors.UNDERLINE"><code class="docutils literal notranslate"><span class="pre">bcolors.UNDERLINE</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.utility.bcolors.WARNING"><code class="docutils literal notranslate"><span class="pre">bcolors.WARNING</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.utility.bcolors.colored"><code class="docutils literal notranslate"><span class="pre">bcolors.colored()</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.utility.bcolors.fail"><code class="docutils literal notranslate"><span class="pre">bcolors.fail()</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.utility.bcolors.header"><code class="docutils literal notranslate"><span class="pre">bcolors.header()</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.utility.bcolors.ok"><code class="docutils literal notranslate"><span class="pre">bcolors.ok()</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.utility.bcolors.okblue"><code class="docutils literal notranslate"><span class="pre">bcolors.okblue()</span></code></a></li>
+<li><a class="reference internal" href="#pyLCM.utility.bcolors.warning"><code class="docutils literal notranslate"><span class="pre">bcolors.warning()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pyLCM.utility.reynolds_number"><code class="docutils literal notranslate"><span class="pre">reynolds_number()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#module-pyLCM">Module contents</a></li>
 </ul>
 </li>
@@ -80,6 +116,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pyLCM.perm.html">pyLCM.perm package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pyLCM.perm.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyLCM.perm.html#module-pyLCM.perm.Gebart">pyLCM.perm.Gebart module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pyLCM.perm.html#module-pyLCM.perm.kz">pyLCM.perm.kz module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pyLCM.perm.html#module-pyLCM.perm.perm_1d">pyLCM.perm.perm_1d module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="pyLCM.perm.html#pyLCM.perm.perm_1d.filling_time"><code class="docutils literal notranslate"><span class="pre">filling_time()</span></code></a></li>
@@ -98,29 +135,307 @@
 <li class="toctree-l2"><a class="reference internal" href="pyLCM.resin.html#module-pyLCM.resin">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="pyLCM.utility.html">pyLCM.utility package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pyLCM.utility.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyLCM.utility.html#module-pyLCM.utility.Reynolds">pyLCM.utility.Reynolds module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pyLCM.utility.html#pyLCM.utility.Reynolds.reynolds_number"><code class="docutils literal notranslate"><span class="pre">reynolds_number()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="pyLCM.utility.html#module-pyLCM.utility.fiber_volume_fraction">pyLCM.utility.fiber_volume_fraction module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pyLCM.utility.html#pyLCM.utility.fiber_volume_fraction.preform_vf"><code class="docutils literal notranslate"><span class="pre">preform_vf()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyLCM.utility.html#pyLCM.utility.fiber_volume_fraction.solid_vf"><code class="docutils literal notranslate"><span class="pre">solid_vf()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyLCM.utility.html#pyLCM.utility.fiber_volume_fraction.tex_to_area"><code class="docutils literal notranslate"><span class="pre">tex_to_area()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyLCM.utility.html#pyLCM.utility.fiber_volume_fraction.tow_vf"><code class="docutils literal notranslate"><span class="pre">tow_vf()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="pyLCM.utility.html#module-pyLCM.utility">Module contents</a></li>
-</ul>
-</li>
 </ul>
 </div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-pyLCM.fiber_fraction">
+<span id="pylcm-fiber-fraction-module"></span><h2>pyLCM.fiber_fraction module<a class="headerlink" href="#module-pyLCM.fiber_fraction" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyLCM.fiber_fraction.solid_vf">
+<span class="sig-prename descclassname"><span class="pre">pyLCM.fiber_fraction.</span></span><span class="sig-name descname"><span class="pre">solid_vf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">volume_tows</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume_total</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/fiber_fraction.html#solid_vf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.fiber_fraction.solid_vf" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the solid volume fraction (the fiber tows are regared as solid)
+of a given volume (unit cell). The result can also be interpreted as the
+complementary of the volume fraction of meso-pores between the fiber tows.
+Namely, the solid volume fraction = 1 - volume fraction of meso-pores.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>volume_tows</strong><span class="classifier">float or list of float</span></dt><dd><p>Volume of the fiber tows which are regared as solid.</p>
+</dd>
+<dt><strong>volume_total</strong><span class="classifier">float</span></dt><dd><p>Volume of the composite.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>vf</strong><span class="classifier">float or list of float</span></dt><dd><p>Solid volume fraction of given volume.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyLCM.fiber_fraction.tex_to_area">
+<span class="sig-prename descclassname"><span class="pre">pyLCM.fiber_fraction.</span></span><span class="sig-name descname"><span class="pre">tex_to_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density_fiber</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2550</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/fiber_fraction.html#tex_to_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.fiber_fraction.tex_to_area" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the cross-sectional area of fibers containing in a tow according
+to the tow linear density in tex and the fiber diameter, where:</p>
+<div class="math notranslate nohighlight">
+\[1 tex = 1/1000 * kg/km\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tex</strong><span class="classifier">float</span></dt><dd><p>Tow linear density in tex.</p>
+</dd>
+<dt><strong>density_fiber</strong><span class="classifier">float</span></dt><dd><p>Density of the fiber in kg/m^3.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>area</strong><span class="classifier">float</span></dt><dd><p>Cross-sectional area of fibers containing in a tow in mm^2.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyLCM.fiber_fraction.tow_vf">
+<span class="sig-prename descclassname"><span class="pre">pyLCM.fiber_fraction.</span></span><span class="sig-name descname"><span class="pre">tow_vf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tow_cross_section_area</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_fibers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_fiber</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">physical_checking</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/fiber_fraction.html#tow_vf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.fiber_fraction.tow_vf" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the fiber volume fraction of a fiber tow according to
+fiber numbers it containing and the fiber diameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tow_cross_section_area</strong><span class="classifier">float or list of float</span></dt><dd><p>Cross-sectional area of the fiber tow.</p>
+</dd>
+<dt><strong>n_fibers</strong><span class="classifier">int</span></dt><dd><p>Number of fibers in the tow.</p>
+</dd>
+<dt><strong>d_fiber</strong><span class="classifier">float</span></dt><dd><p>Diameter of the fiber.</p>
+</dd>
+<dt><strong>physical_checking</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, the fiber volume fraction will be checked to be in the
+range of 0 to 0.907 for hexagonal close packing. The default is False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>vf</strong><span class="classifier">float or list of float</span></dt><dd><p>local fiber volume fractions of the fiber tow.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyLCM.fiber_fraction.vf_preform">
+<span class="sig-prename descclassname"><span class="pre">pyLCM.fiber_fraction.</span></span><span class="sig-name descname"><span class="pre">vf_preform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rho_areal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thickness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho_fiber</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2550</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/fiber_fraction.html#vf_preform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.fiber_fraction.vf_preform" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the fiber volume fraction of a preform according to
+areal density, number of layers and thickness of the preform.</p>
+<div class="math notranslate nohighlight">
+\[V_f = \frac{n \times \rho_{areal}} { t \times rho_{fiber}}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>rho_areal</strong><span class="classifier">float</span></dt><dd><p>Areal density of the reinforcement textile. Unit: kg/m^2.</p>
+</dd>
+<dt><strong>n_layers</strong><span class="classifier">int</span></dt><dd><p>Number of layers of reinforcement textile in the preform.</p>
+</dd>
+<dt><strong>thickness</strong><span class="classifier">float</span></dt><dd><p>Thickness of the preform. Unit: m.</p>
+</dd>
+<dt><strong>rho_fiber</strong><span class="classifier">float, optional</span></dt><dd><p>Density of the fiber in kg/m^3. The default is 2550 kg/m^3.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>vf</strong><span class="classifier">float</span></dt><dd><p>Fiber volume fraction of the preform.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pyLCM.of_tools">
+<span id="pylcm-of-tools-module"></span><h2>pyLCM.of_tools module<a class="headerlink" href="#module-pyLCM.of_tools" title="Permalink to this heading"></a></h2>
+<p>A collection of tools to work with OpenFOAM data.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyLCM.of_tools.read_flow_rate">
+<span class="sig-prename descclassname"><span class="pre">pyLCM.of_tools.</span></span><span class="sig-name descname"><span class="pre">read_flow_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/of_tools.html#read_flow_rate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.of_tools.read_flow_rate" title="Permalink to this definition"></a></dt>
+<dd><p>Read flow rate data from a file generated by “#includeFunc flowRatePatch”
+function in OpenFOAM and return a dictionary consisting of area and flow rate data.
+TODO : Add a file template and link to the documentation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>file_path</strong><span class="classifier">str</span></dt><dd><p>Path to the file containing flow rate data</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">dict</span></dt><dd><p>Dictionary containing area and flow rate data.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pyLCM.pam_tools">
+<span id="pylcm-pam-tools-module"></span><h2>pyLCM.pam_tools module<a class="headerlink" href="#module-pyLCM.pam_tools" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-pyLCM.utility">
+<span id="pylcm-utility-module"></span><h2>pyLCM.utility module<a class="headerlink" href="#module-pyLCM.utility" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyLCM.utility.bcolors">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyLCM.utility.</span></span><span class="sig-name descname"><span class="pre">bcolors</span></span><a class="reference internal" href="../_modules/pyLCM/utility.html#bcolors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.utility.bcolors" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>[Simple Python class to create colored messages for command line printing]
+(<a class="reference external" href="https://gist.github.com/tuvokki/14deb97bef6df9bc6553">https://gist.github.com/tuvokki/14deb97bef6df9bc6553</a>)</p>
+<p>Helper class to print colored output</p>
+<p>To use code like this, you can do something like</p>
+<dl class="simple">
+<dt>print bcolors.WARNING</dt><dd><ul class="simple">
+<li><p>“Warning: No active frommets remain. Continue?”</p></li>
+<li><p>bcolors.ENDC</p></li>
+</ul>
+</dd>
+</dl>
+<p>you can also use the convenience method bcolors.colored like this</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">bcolors</span><span class="o">.</span><span class="n">colored</span><span class="p">(</span><span class="s2">&quot;This frumble is underlined&quot;</span><span class="p">,</span> <span class="n">bcolors</span><span class="o">.</span><span class="n">UNDERLINE</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>or use one of the following convenience methods:</dt><dd><p>warning, fail, ok, okblue, header</p>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyLCM.utility.bcolors.colored" title="pyLCM.utility.bcolors.colored"><code class="xref py py-obj docutils literal notranslate"><span class="pre">colored</span></code></a>(message, color)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyLCM.utility.bcolors.fail" title="pyLCM.utility.bcolors.fail"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fail</span></code></a>(message)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyLCM.utility.bcolors.header" title="pyLCM.utility.bcolors.header"><code class="xref py py-obj docutils literal notranslate"><span class="pre">header</span></code></a>(message)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyLCM.utility.bcolors.ok" title="pyLCM.utility.bcolors.ok"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ok</span></code></a>(message)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyLCM.utility.bcolors.okblue" title="pyLCM.utility.bcolors.okblue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">okblue</span></code></a>(message)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyLCM.utility.bcolors.warning" title="pyLCM.utility.bcolors.warning"><code class="xref py py-obj docutils literal notranslate"><span class="pre">warning</span></code></a>(message)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyLCM.utility.bcolors.BOLD">
+<span class="sig-name descname"><span class="pre">BOLD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[1m'</span></em><a class="headerlink" href="#pyLCM.utility.bcolors.BOLD" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyLCM.utility.bcolors.ENDC">
+<span class="sig-name descname"><span class="pre">ENDC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[0m'</span></em><a class="headerlink" href="#pyLCM.utility.bcolors.ENDC" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyLCM.utility.bcolors.FAIL">
+<span class="sig-name descname"><span class="pre">FAIL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[91m'</span></em><a class="headerlink" href="#pyLCM.utility.bcolors.FAIL" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyLCM.utility.bcolors.HEADER">
+<span class="sig-name descname"><span class="pre">HEADER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[95m'</span></em><a class="headerlink" href="#pyLCM.utility.bcolors.HEADER" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyLCM.utility.bcolors.OKBLUE">
+<span class="sig-name descname"><span class="pre">OKBLUE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[94m'</span></em><a class="headerlink" href="#pyLCM.utility.bcolors.OKBLUE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyLCM.utility.bcolors.OKCYAN">
+<span class="sig-name descname"><span class="pre">OKCYAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[96m'</span></em><a class="headerlink" href="#pyLCM.utility.bcolors.OKCYAN" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyLCM.utility.bcolors.OKGREEN">
+<span class="sig-name descname"><span class="pre">OKGREEN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[92m'</span></em><a class="headerlink" href="#pyLCM.utility.bcolors.OKGREEN" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyLCM.utility.bcolors.UNDERLINE">
+<span class="sig-name descname"><span class="pre">UNDERLINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[4m'</span></em><a class="headerlink" href="#pyLCM.utility.bcolors.UNDERLINE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyLCM.utility.bcolors.WARNING">
+<span class="sig-name descname"><span class="pre">WARNING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[93m'</span></em><a class="headerlink" href="#pyLCM.utility.bcolors.WARNING" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyLCM.utility.bcolors.colored">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">colored</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/utility.html#bcolors.colored"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.utility.bcolors.colored" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyLCM.utility.bcolors.fail">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/utility.html#bcolors.fail"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.utility.bcolors.fail" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyLCM.utility.bcolors.header">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/utility.html#bcolors.header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.utility.bcolors.header" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyLCM.utility.bcolors.ok">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ok</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/utility.html#bcolors.ok"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.utility.bcolors.ok" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyLCM.utility.bcolors.okblue">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">okblue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/utility.html#bcolors.okblue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.utility.bcolors.okblue" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyLCM.utility.bcolors.warning">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">warning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/utility.html#bcolors.warning"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.utility.bcolors.warning" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyLCM.utility.reynolds_number">
+<span class="sig-prename descclassname"><span class="pre">pyLCM.utility.</span></span><span class="sig-name descname"><span class="pre">reynolds_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">L</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/utility.html#reynolds_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.utility.reynolds_number" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate Reynolds number for a given velocity field.</p>
+<img alt="../_images/reynolds_number.svg" src="../_images/reynolds_number.svg" /><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>rho</strong><span class="classifier">float</span></dt><dd><p>Density of fluid</p>
+</dd>
+<dt><strong>u</strong><span class="classifier">float or array of float/vector</span></dt><dd><p>Velocity vector (field) of fluid</p>
+</dd>
+<dt><strong>L</strong><span class="classifier">float</span></dt><dd><p>Characteristic length</p>
+</dd>
+<dt><strong>mu</strong><span class="classifier">float</span></dt><dd><p>Dynamic viscosity of fluid</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>Re</strong><span class="classifier">float</span></dt><dd><p>Reynolds number</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="module-pyLCM">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyLCM" title="Permalink to this heading"></a></h2>
 <p>pyLCM.</p>
-<p>Flow calculation in reinforcement textiles.</p>
+<p>A collection of tools for LCM (Liquid Composite Molding) engineering.</p>
 </section>
 </section>
 

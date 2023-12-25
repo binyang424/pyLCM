@@ -4,6 +4,14 @@ pyLCM.perm package
 Submodules
 ----------
 
+pyLCM.perm.Gebart module
+------------------------
+
+.. automodule:: pyLCM.perm.Gebart
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pyLCM.perm.kz module
 --------------------
 

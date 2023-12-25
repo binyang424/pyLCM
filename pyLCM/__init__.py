@@ -9,7 +9,7 @@ __author__ = 'Bin Yang'
 __credits__ = 'Polytechnique Montreal & Wuhan University of Technology'
 
 
-from .fiber_volume_fraction import *
+from .fiber_fraction import *
 from .perm import *
 from .resin import *
 

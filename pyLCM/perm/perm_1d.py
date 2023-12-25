@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import numpy as np
 
 
 def flow_dist(permeability, pressure, porosity, viscosity, time):
@@ -50,34 +51,37 @@ def filling_time(permeability, pressure, porosity, viscosity, distance):
     return (viscosity * porosity * distance ** 2) / (2 * pressure * permeability)
 
 
-def saturated(mass_flow_rate, area, pressure, flow_dist, liquid_density, mu):
+def saturated(volumetric_flow_rate, area, pressure, flow_dist, mu):
     """
     Calculate the saturated one dimensional permeability of porous media according to
     the Darcy's law and experimental measured mass flow rate:
 
     permeability = (VolumeFlowRate * viscosity * thickness) / (pressure * area * liquidDensity)
 
-    Parameters
-    ----------
-    mass_flow_rate: float
-        Mass flow rate of the fluid in kg/s.
-    area: float
-        Cross-section area perpendicular to the flow in m^2.
-    pressure: float
-        Pressure drop across the porous media in the flow direction in Pa.
-    flow_dist: float
-        Flow distance (sample length along the flow direction) in m.
-    liquid_density: float
-        Density of the fluid in kg/m^3.
-    mu: float
-        Viscosity of the fluid in Pa*s.
+        Parameters
+        ----------
+        volumetric_flow_rate: array-like
+            Volumetric flow rate of the fluid in m^3/s.
+        area: float
+            Cross-section area perpendicular to the flow in m^2.
+        pressure: float
+            Pressure drop across the porous media in the flow direction in Pa.
+        flow_dist: float
+            Flow distance (sample length along the flow direction) in m.
+        mu: float
+            Viscosity of the fluid in Pa*s.
 
-    Returns
-    -------
-    one dimensional permeability: m^2
+        Returns
+        -------
+        one dimensional permeability: m^2
     """
 
-    return (mass_flow_rate * mu * flow_dist) / (pressure * area * liquid_density)
+    if isinstance(volumetric_flow_rate, list):
+        volumetric_flow_rate = np.array(volumetric_flow_rate)
+    elif isinstance(volumetric_flow_rate, float):
+        volumetric_flow_rate = np.array([volumetric_flow_rate])
+
+    return (volumetric_flow_rate * mu * flow_dist) / (pressure * area)
 
 
 def unsaturated(flow_front, time, Vf, pressure, mu, skip=0, plot=False):

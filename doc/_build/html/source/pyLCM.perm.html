@@ -43,6 +43,7 @@
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">pyLCM.perm package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-pyLCM.perm.Gebart">pyLCM.perm.Gebart module</a></li>
 <li><a class="reference internal" href="#module-pyLCM.perm.kz">pyLCM.perm.kz module</a></li>
 <li><a class="reference internal" href="#module-pyLCM.perm.perm_1d">pyLCM.perm.perm_1d module</a><ul>
 <li><a class="reference internal" href="#pyLCM.perm.perm_1d.filling_time"><code class="docutils literal notranslate"><span class="pre">filling_time()</span></code></a></li>
@@ -87,6 +88,13 @@
 <h1>pyLCM.perm package<a class="headerlink" href="#pylcm-perm-package" title="Permalink to this heading"></a></h1>
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-pyLCM.perm.Gebart">
+<span id="pylcm-perm-gebart-module"></span><h2>pyLCM.perm.Gebart module<a class="headerlink" href="#module-pyLCM.perm.Gebart" title="Permalink to this heading"></a></h2>
+<p>This is a implementation of the Gebart equation for the prediction of 
+fiber tow permeability. The equation is proposed by Gebart et al:</p>
+<p>Gebart BR. Permeability of unidirectional reinforcements for RTM.
+Journal of composite materials. 1992 Aug;26(8):1100-33.</p>
 </section>
 <section id="module-pyLCM.perm.kz">
 <span id="pylcm-perm-kz-module"></span><h2>pyLCM.perm.kz module<a class="headerlink" href="#module-pyLCM.perm.kz" title="Permalink to this heading"></a></h2>
@@ -227,22 +235,20 @@ on Darcy’s law.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pyLCM.perm.perm_1d.saturated">
-<span class="sig-prename descclassname"><span class="pre">pyLCM.perm.perm_1d.</span></span><span class="sig-name descname"><span class="pre">saturated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mass_flow_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">area</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flow_dist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">liquid_density</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/perm/perm_1d.html#saturated"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.perm.perm_1d.saturated" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyLCM.perm.perm_1d.</span></span><span class="sig-name descname"><span class="pre">saturated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">volumetric_flow_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">area</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flow_dist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyLCM/perm/perm_1d.html#saturated"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyLCM.perm.perm_1d.saturated" title="Permalink to this definition"></a></dt>
 <dd><p>Calculate the saturated one dimensional permeability of porous media according to
 the Darcy’s law and experimental measured mass flow rate:</p>
 <p>permeability = (VolumeFlowRate * viscosity * thickness) / (pressure * area * liquidDensity)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>mass_flow_rate: float</strong></dt><dd><p>Mass flow rate of the fluid in kg/s.</p>
+<dt><strong>volumetric_flow_rate: array-like</strong></dt><dd><p>Volumetric flow rate of the fluid in m^3/s.</p>
 </dd>
 <dt><strong>area: float</strong></dt><dd><p>Cross-section area perpendicular to the flow in m^2.</p>
 </dd>
 <dt><strong>pressure: float</strong></dt><dd><p>Pressure drop across the porous media in the flow direction in Pa.</p>
 </dd>
 <dt><strong>flow_dist: float</strong></dt><dd><p>Flow distance (sample length along the flow direction) in m.</p>
-</dd>
-<dt><strong>liquid_density: float</strong></dt><dd><p>Density of the fluid in kg/m^3.</p>
 </dd>
 <dt><strong>mu: float</strong></dt><dd><p>Viscosity of the fluid in Pa*s.</p>
 </dd>

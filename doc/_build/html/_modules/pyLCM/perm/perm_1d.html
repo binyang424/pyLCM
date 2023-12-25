@@ -66,6 +66,7 @@
              
   <h1>Source code for pyLCM.perm.perm_1d</h1><div class="highlight"><pre>
 <span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
 <div class="viewcode-block" id="flow_dist"><a class="viewcode-back" href="../../../source/pyLCM.perm.html#pyLCM.perm.perm_1d.flow_dist">[docs]</a><span class="k">def</span> <span class="nf">flow_dist</span><span class="p">(</span><span class="n">permeability</span><span class="p">,</span> <span class="n">pressure</span><span class="p">,</span> <span class="n">porosity</span><span class="p">,</span> <span class="n">viscosity</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
@@ -117,34 +118,37 @@
     <span class="k">return</span> <span class="p">(</span><span class="n">viscosity</span> <span class="o">*</span> <span class="n">porosity</span> <span class="o">*</span> <span class="n">distance</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pressure</span> <span class="o">*</span> <span class="n">permeability</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="saturated"><a class="viewcode-back" href="../../../source/pyLCM.perm.html#pyLCM.perm.perm_1d.saturated">[docs]</a><span class="k">def</span> <span class="nf">saturated</span><span class="p">(</span><span class="n">mass_flow_rate</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="n">pressure</span><span class="p">,</span> <span class="n">flow_dist</span><span class="p">,</span> <span class="n">liquid_density</span><span class="p">,</span> <span class="n">mu</span><span class="p">):</span>
+<div class="viewcode-block" id="saturated"><a class="viewcode-back" href="../../../source/pyLCM.perm.html#pyLCM.perm.perm_1d.saturated">[docs]</a><span class="k">def</span> <span class="nf">saturated</span><span class="p">(</span><span class="n">volumetric_flow_rate</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="n">pressure</span><span class="p">,</span> <span class="n">flow_dist</span><span class="p">,</span> <span class="n">mu</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate the saturated one dimensional permeability of porous media according to</span>
 <span class="sd">    the Darcy&#39;s law and experimental measured mass flow rate:</span>
 
 <span class="sd">    permeability = (VolumeFlowRate * viscosity * thickness) / (pressure * area * liquidDensity)</span>
 
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    mass_flow_rate: float</span>
-<span class="sd">        Mass flow rate of the fluid in kg/s.</span>
-<span class="sd">    area: float</span>
-<span class="sd">        Cross-section area perpendicular to the flow in m^2.</span>
-<span class="sd">    pressure: float</span>
-<span class="sd">        Pressure drop across the porous media in the flow direction in Pa.</span>
-<span class="sd">    flow_dist: float</span>
-<span class="sd">        Flow distance (sample length along the flow direction) in m.</span>
-<span class="sd">    liquid_density: float</span>
-<span class="sd">        Density of the fluid in kg/m^3.</span>
-<span class="sd">    mu: float</span>
-<span class="sd">        Viscosity of the fluid in Pa*s.</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        volumetric_flow_rate: array-like</span>
+<span class="sd">            Volumetric flow rate of the fluid in m^3/s.</span>
+<span class="sd">        area: float</span>
+<span class="sd">            Cross-section area perpendicular to the flow in m^2.</span>
+<span class="sd">        pressure: float</span>
+<span class="sd">            Pressure drop across the porous media in the flow direction in Pa.</span>
+<span class="sd">        flow_dist: float</span>
+<span class="sd">            Flow distance (sample length along the flow direction) in m.</span>
+<span class="sd">        mu: float</span>
+<span class="sd">            Viscosity of the fluid in Pa*s.</span>
 
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    one dimensional permeability: m^2</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        one dimensional permeability: m^2</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">return</span> <span class="p">(</span><span class="n">mass_flow_rate</span> <span class="o">*</span> <span class="n">mu</span> <span class="o">*</span> <span class="n">flow_dist</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">pressure</span> <span class="o">*</span> <span class="n">area</span> <span class="o">*</span> <span class="n">liquid_density</span><span class="p">)</span></div>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">volumetric_flow_rate</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">volumetric_flow_rate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">volumetric_flow_rate</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">volumetric_flow_rate</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="n">volumetric_flow_rate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">volumetric_flow_rate</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">volumetric_flow_rate</span> <span class="o">*</span> <span class="n">mu</span> <span class="o">*</span> <span class="n">flow_dist</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">pressure</span> <span class="o">*</span> <span class="n">area</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="unsaturated"><a class="viewcode-back" href="../../../source/pyLCM.perm.html#pyLCM.perm.perm_1d.unsaturated">[docs]</a><span class="k">def</span> <span class="nf">unsaturated</span><span class="p">(</span><span class="n">flow_front</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">Vf</span><span class="p">,</span> <span class="n">pressure</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">skip</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
